@@ -1,14 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>ComicBank</title>
-  <base href="/">
+<!DOCTYPE html>
+<html ng-app="comicbank">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="userGreeting">
+      <p>Let's read some comics, {{greeting.text}}</p>
+    </div>
+<script>
+    var comicbank = angular.module('comicbank', []);
+		comicbank.controller('userGreeting', ['$scope',
+  	function($scope) {
+    	$scope.greeting = { text: 'Rachel!' };
+	}]);
+</script>
+  </body>
+
 </html>
